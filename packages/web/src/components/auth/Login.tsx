@@ -3,8 +3,10 @@ import SvgXmark from '../svg/Xmark';
 import SocialLogin from './SocialLogin';
 import { useLoginModalStore } from '../../stores/useLoginModal';
 
-const LoginModal = () => {
+const Login = () => {
   const close = useLoginModalStore((state) => state.close);
+
+  // 백엔드 로그인 인증인가 api 받아오기
 
   return (
     <div className="bg-white">
@@ -41,11 +43,4 @@ const LoginModal = () => {
   );
 };
 
-export default LoginModal;
-
-// export function getServerSideProps() {
-
-//   return {
-//     props: { login },
-//   }
-// }
+export default Login;
