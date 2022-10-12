@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import React from 'react';
-import SvgArrowRight from '../svg/ArrowRight';
 import SvgKakao from '../svg/Kakao';
 import SvgGoogle from '../svg/Google';
 import SvgNaver from '../svg/Naver';
@@ -17,20 +16,22 @@ interface Props {
   name: string;
   color: string;
   iconstyle?: string;
+  textColor?: string;
 }
 
-const SocialLogin = ({ loginUrl, name, color, icon, iconstyle }: Props) => {
+const SocialLogin = ({ loginUrl, name, color, icon, iconstyle, textColor }: Props) => {
   const iconEl = React.createElement(IconMap[icon]);
 
   return (
     <Link href={loginUrl} passHref>
       <a
         rel="noopener noreferrer"
-        className={`flex items-center justify-between mx-5 my-4 py-2 pr-3 rounded-xl text-2xl text-white font-bold ${color}`}
+        className={`flex items-center justify-center w-48 my-2 h-9 pr-3 rounded-md text-2xl text-white font-bold ${color}`}
       >
-        <div className={iconstyle}>{iconEl}</div>
-        <span className="text-base">{name}</span>
-        <SvgArrowRight />
+        <div className="flex items-center justify-center w-full">
+          <div className={`${iconstyle}`}>{iconEl}</div>
+          <span className={`text-sm font-medium ${textColor} font-roboto`}>{name}</span>
+        </div>
       </a>
     </Link>
   );
