@@ -26,7 +26,7 @@ const SocialLogin = ({ loginUrl, name, color, icon, iconstyle, textColor }: Prop
     <Link href={loginUrl} passHref>
       <a
         rel="noopener noreferrer"
-        className={`flex items-center justify-center w-48 my-2 h-9 pr-3 rounded-md text-2xl text-white font-bold ${color}`}
+        className={`flex items-center justify-center w-48 my-2 h-9 pr-3 rounded-md text-2xl text-white font-bold hover:opacity-80 ${color}`}
       >
         <div className="flex items-center justify-center w-full">
           <div className={`${iconstyle}`}>{iconEl}</div>
