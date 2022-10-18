@@ -1,12 +1,11 @@
 import type { NextPage } from 'next';
 import Login from '../components/auth/Login';
-import Register from '../components/auth/Register';
 import Seo from '../components/base/Seo';
-import { useLoginModalStore } from '../stores/useLoginModal';
+import { setLoginModalStore } from '../stores/loginModal';
 
 const Home: NextPage = () => {
-  const login = useLoginModalStore((state) => state.visible);
-  const open = useLoginModalStore((state) => state.open);
+  const login = setLoginModalStore((state) => state.visible);
+  const open = setLoginModalStore((state) => state.open);
 
   return (
     <>

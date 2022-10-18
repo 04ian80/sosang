@@ -1,12 +1,12 @@
 import create from 'zustand';
 
-interface LoginModalStore {
+interface loginModalStore {
   visible: boolean;
   open(): void;
   close(): void;
 }
 
-export const useLoginModalStore = create<LoginModalStore>((set) => ({
+export const setLoginModalStore = create<loginModalStore>((set) => ({
   visible: false,
   open() {
     set((prev) => ({

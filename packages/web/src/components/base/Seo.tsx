@@ -10,8 +10,8 @@ const Seo = ({ title, content }: Meta) => {
   return (
     <Head>
       <title>{title}</title>
-      <meta name='description' content={content} />
-      <link rel='icon' href='/sosang.png' />
+      <meta name="description" content={content} />
+      <link rel="icon" href="/sosang.png" />
     </Head>
   );
 };

@@ -17,13 +17,14 @@ interface Props {
   color: string;
   iconstyle?: string;
   textColor?: string;
+  id?: string;
 }
 
-const SocialLogin = ({ loginUrl, name, color, icon, iconstyle, textColor }: Props) => {
+const SocialLogin = ({ loginUrl, name, color, icon, iconstyle, textColor, id = '' }: Props) => {
   const iconEl = React.createElement(IconMap[icon]);
 
   return (
-    <Link href={loginUrl} passHref>
+    <Link href={loginUrl} id={id} passHref>
       <a
         rel="noopener noreferrer"
         className={`flex items-center justify-center w-48 my-2 h-9 pr-3 rounded-md text-2xl text-white font-bold hover:opacity-80 ${color}`}

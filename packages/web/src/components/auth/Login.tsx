@@ -1,12 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import SvgXmark from '../svg/Xmark';
 import SocialLogin from './SocialLogin';
-import { useLoginModalStore } from '../../stores/useLoginModal';
+import { setLoginModalStore } from '../../stores/loginModal';
+import { KAKAO_LOGIN } from '../../lib/api/auth';
 
 const Login = () => {
-  const close = useLoginModalStore((state) => state.close);
-
-  // 백엔드 로그인 인증인가 api 받아오기
+  const close = setLoginModalStore((state) => state.close);
 
   return (
     <div className="bg-white">
@@ -23,8 +22,9 @@ const Login = () => {
             color="bg-googleBlue"
             name="구글 계정으로 로그인"
           />
+          <button id="naverIdLogin">네이버로그인</button>
           <SocialLogin
-            loginUrl=""
+            loginUrl={KAKAO_LOGIN}
             icon="kakao"
             color="bg-kakaoYellow"
             iconstyle="text-black pr-3"
@@ -33,6 +33,7 @@ const Login = () => {
           />
           <SocialLogin
             loginUrl=""
+            id="naverIdLogin"
             icon="naver"
             iconstyle="pr-2"
             color="bg-naverGreen"
