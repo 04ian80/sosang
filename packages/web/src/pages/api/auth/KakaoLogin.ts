@@ -1,26 +1,13 @@
 import axios from 'axios';
 import { useRouter } from 'next/router';
+import { useState } from 'react';
 
-export const kakaoLogin = (code: string | null): any => {
-  return function () {
-    let router = useRouter();
-    axios({
-      method: 'GET',
-      url: `/login/kakao?code=${code}`,
-    })
-      .then((res) => {
-        console.log(res); // 토큰이 넘어올 것임
+interface AuthParams {
+  code: string | null;
+}
 
-        const ACCESS_TOKEN = res.data.accessToken;
-
-        localStorage.setItem('token', ACCESS_TOKEN); //예시로 로컬에 저장함
-
-        router.push('/'); // 토큰 받았았고 로그인됐으니 화면 전환시켜줌(메인으로)
-      })
-      .catch((err) => {
-        console.log('소셜로그인 에러', err);
-        window.alert('로그인에 실패하였습니다.');
-        router.push('/login/kakao'); // 로그인 실패하면 로그인화면으로 돌려보냄
-      });
-  };
-};
+export async function kakaoLogin(params: AuthParams) {
+  const res = await axios.post('/login/kakao', params, { withCredentials: true });
+  console.log('res', res, params);
+  // router.push('/', undefined, { shallow: true });
+}
