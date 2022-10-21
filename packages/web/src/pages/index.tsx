@@ -1,4 +1,6 @@
+import axios from 'axios';
 import type { NextPage } from 'next';
+import { useEffect } from 'react';
 import Login from '../components/auth/Login';
 import Seo from '../components/base/Seo';
 import { setLoginModalStore } from '../stores/loginModal';

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import SvgXmark from '../svg/Xmark';
 import SocialLogin from './SocialLogin';
 import { setLoginModalStore } from '../../stores/loginModal';
-import { KAKAO_LOGIN } from '../../lib/api/auth';
+import { KAKAO_LOGIN, NAVER_LOGIN } from '../../lib/auth';
 
 const Login = () => {
   const close = setLoginModalStore((state) => state.close);
@@ -22,7 +22,9 @@ const Login = () => {
             color="bg-googleBlue"
             name="구글 계정으로 로그인"
           />
-          <button id="naverIdLogin">네이버로그인</button>
+          {/* <div>
+            <div id="naverIdLogin"></div>
+          </div> */}
           <SocialLogin
             loginUrl={KAKAO_LOGIN}
             icon="kakao"
@@ -32,8 +34,7 @@ const Login = () => {
             name="카카오 계정으로 로그인"
           />
           <SocialLogin
-            loginUrl=""
-            id="naverIdLogin"
+            loginUrl={NAVER_LOGIN}
             icon="naver"
             iconstyle="pr-2"
             color="bg-naverGreen"
