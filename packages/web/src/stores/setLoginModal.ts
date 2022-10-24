@@ -6,7 +6,7 @@ interface LoginModalStore {
   close(): void;
 }
 
-export const useLoginModalStore = create<LoginModalStore>((set) => ({
+export const setLoginModalStore = create<LoginModalStore>((set) => ({
   visible: false,
   open() {
     set((prev) => ({
