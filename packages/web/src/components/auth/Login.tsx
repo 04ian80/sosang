@@ -13,7 +13,7 @@ const Login = () => {
       <div className="flex flex-col items-center justify-center h-screen p-6">
         <div className="relative flex flex-col justify-center items-center w-10/12 mx-auto sm:w-72 px-2 py-8 border border-gray-200 rounded-3xl shadow-md">
           <button onClick={close} className="absolute right-5 top-3 hover:opacity-60">
-            <SvgXmark />
+            <SvgXmark size={30} />
           </button>
           <h2 className="font-bold text-slate-600 text-4xl my-4">머스트잇</h2>
           <NextSocialLogin

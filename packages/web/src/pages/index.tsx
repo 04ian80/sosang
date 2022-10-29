@@ -13,13 +13,10 @@ const Home: NextPage = () => {
 
   return (
     <>
-      <Seo title="홈 | 소상공간" content="소상공인 위주의 맛집 추천 웹사이트" />
+      <Seo title="홈 | 머스트잇" content="소상공인 위주의 맛집 추천 웹사이트" />
       <div>홈</div>
       <p>status: {status}</p>
       <p>data: {data?.user?.name}</p>
-      {data?.user?.image && (
-        <img src={data.user.image} alt="프로필 이미지" width="20" height="20" />
-      )}
       {data?.user ? (
         <button onClick={() => signOut()}>로그아웃</button>
       ) : (
