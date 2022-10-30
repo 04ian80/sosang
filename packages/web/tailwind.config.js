@@ -54,6 +54,11 @@ module.exports = {
         'min-xl': { min: '1440px' },
         'max-sm': { max: '615px' },
       },
+      zIndex: {
+        1000: '1000',
+        5555: '5555',
+        9999: '9999',
+      },
     },
     screens: {
       sm: { min: '400px' },

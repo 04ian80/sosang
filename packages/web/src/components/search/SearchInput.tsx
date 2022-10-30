@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ViaMap from '../items/ViaMap';
-import ArrowLeft from '../svg/ArrowLeft';
-import CaretDownFill from '../svg/CaretDownFill';
-import Map from '../svg/Map';
 import Search from '../svg/Search';
 import LocationOption from './LocationOption';
 
-const SearchInput = ({ className = '', inputStyle = '' }) => {
-  const [option, setOption] = useState(false);
+interface searchProps {
+  className?: string;
+  inputStyle?: string;
+}
 
+const SearchInput = ({ className, inputStyle }: searchProps) => {
   return (
     <div className={`flex items-center ${className}`}>
       <div className="flex justify-end relative bg-white [&>*]:py-1 [&>*]:px-4 font-normal text-gray-800 border border-gray-100 [&>:not(last-child)]:border-r shrink-0">
