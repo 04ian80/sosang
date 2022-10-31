@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+const plugin = require('tailwindcss/plugin');
 module.exports = {
   content: ['./src/**/**/*.tsx'],
   theme: {
@@ -44,11 +45,28 @@ module.exports = {
         black: '#000',
         'gray-200': 'rgb(229 231 235)',
         'zinc-300': 'rgb(212 212 216)',
+        brandGreen: '#064e3b',
+      },
+      screens: {
+        'min-sm': { min: '615px' },
+        'min-md': { min: '768px' },
+        'min-lg': { min: '976px' },
+        'min-xl': { min: '1440px' },
+        'max-sm': { max: '615px' },
+      },
+      zIndex: {
+        1000: '1000',
+        5555: '5555',
+        9999: '9999',
       },
     },
     screens: {
       sm: { min: '400px' },
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(function ({ addVariant }) {
+      addVariant('not-last', '&:not(:last-child)');
+    }),
+  ],
 };

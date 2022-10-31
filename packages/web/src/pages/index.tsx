@@ -3,17 +3,26 @@ import type { NextPage } from 'next';
 import { useEffect } from 'react';
 import Login from '../components/auth/Login';
 import Seo from '../components/base/Seo';
-import { setLoginModalStore } from '../stores/loginModal';
+import { setLoginModalStore } from '../stores/setLoginModal';
+import { useSession, signOut } from 'next-auth/react';
 
 const Home: NextPage = () => {
+  const { data, status } = useSession();
+
   const login = setLoginModalStore((state) => state.visible);
   const open = setLoginModalStore((state) => state.open);
 
   return (
     <>
-      <Seo title="홈 | 소상공간" content="소상공인 위주의 맛집 추천 웹사이트" />
+      <Seo title="홈 | 머스트잇" content="소상공인 위주의 맛집 추천 웹사이트" />
       <div>홈</div>
-      <button onClick={open}>로그인/회원가입</button>
+      <p>status: {status}</p>
+      <p>data: {data?.user?.name}</p>
+      {data?.user ? (
+        <button onClick={() => signOut()}>로그아웃</button>
+      ) : (
+        <button onClick={open}>로그인</button>
+      )}
       {login && <Login />}
     </>
   );
