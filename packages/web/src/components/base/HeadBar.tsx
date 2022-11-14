@@ -4,7 +4,7 @@ import { setLoginModalStore } from '../../stores/setLoginModal';
 import SearchInput from '../search/SearchInput';
 import MenuButton from '../items/MenuButton';
 import { MobileSearch, ShowMobileSearch } from '../items/ShowMobileSearch';
-import LoginedHead from '../items/LoginedHead';
+import Profile from '../items/Profile';
 import Link from 'next/link';
 
 const HeadBar = () => {
@@ -13,10 +13,10 @@ const HeadBar = () => {
   const [isSearchBarMobile, setSearchSearchBar] = useState(false);
 
   return (
-    <div className="relative">
+    <div className="relative z-9999">
       <div className="flex items-center justify-between px-6 py-3 shadow-sm">
         <Link href="/">
-          <a className="font-bold text-xl text-brandGreen">머스트잇</a>
+          <a className="font-bold text-xl text-brandGreen-900">머스트잇</a>
         </Link>
 
         <SearchInput className="max-sm:hidden" />
@@ -24,7 +24,7 @@ const HeadBar = () => {
         <div className="relative flex items-center justify-end [&>*]:ml-3">
           <ShowMobileSearch onShow={() => setSearchSearchBar((prev) => !prev)} />
           {data?.user?.image ? (
-            <LoginedHead image={data.user.image} />
+            <Profile image={data.user.image} />
           ) : (
             <button
               onClick={openModal}

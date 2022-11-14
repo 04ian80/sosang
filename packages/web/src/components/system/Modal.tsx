@@ -23,20 +23,18 @@ const Modal = ({ visible, onClose, title, className, menus }: ModalProps) => {
       {visible && (
         <div
           ref={modalRef}
-          className={`border rounded-lg border-gray-200 absolute w-40 z-1000 bg-white after:content-[''] after:absolute after:-top-1 after:right-4 after:w-2 after:h-2 after:bg-white after:rotate-45 after:border-l after:border-t ${className}`}
+          className={`border rounded-lg border-gray-200 absolute w-40 bg-white after:content-[''] after:absolute after:-top-1 after:right-4 after:w-2 after:h-2 after:bg-white after:rotate-45 after:border-l after:border-t ${className}`}
         >
           <h2 className="border-b-2 px-4 py-3 text-lg">{title}</h2>
           <div className="flex flex-col">
             {menus?.map((item) => (
-              <div
-                key={item.name}
-                onClick={() => onClose()}
-                className="flex items-center justify-between group px-4 py-3 text-gray-700 hover:bg-gray-100 cursor-pointer"
-              >
+              <div key={item.name} onClick={() => onClose()}>
                 <Link href={item.link}>
-                  <a>{item.name}</a>
+                  <a className="flex items-center justify-between group px-4 py-3 text-gray-700 hover:bg-gray-100 cursor-pointer">
+                    {item.name}
+                    <span className="invisible group-hover:visible">&gt;</span>
+                  </a>
                 </Link>
-                <span className="invisible group-hover:visible">&gt;</span>
               </div>
             ))}
             {myAccount && (

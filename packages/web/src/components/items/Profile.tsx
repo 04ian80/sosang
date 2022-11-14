@@ -1,10 +1,11 @@
 import React, { useRef, useState } from 'react';
 import Modal from '../system/Modal';
 import { onCloseModal } from '../../lib/onCloseModal';
+import Image from 'next/image';
 
-const LoginedHead = ({ image }: { image: string }) => {
+const Profile = ({ image }: { image: string }) => {
   const myMenu: { name: string; link: string }[] = [
-    { name: '장소 등록하기', link: '/stores/add' },
+    { name: '가게 제안하기', link: '/place/add' },
     { name: '마이페이지', link: '/my' },
     { name: '내 리스트', link: '/mylist' },
     { name: '내 일기', link: '/mydiary' },
@@ -18,15 +19,17 @@ const LoginedHead = ({ image }: { image: string }) => {
 
   return (
     <div className="relative">
-      <img
-        src={image}
-        alt="프로필 이미지"
-        width="30"
-        height="30"
-        className="rounded-xl w-8 h-8 object-cover cursor-pointer"
-        onClick={() => setVisible((prev) => !prev)}
-        ref={buttonRef}
-      />
+      <div ref={buttonRef} className="flex items-center">
+        <Image
+          src={image}
+          alt="프로필 이미지"
+          width="30"
+          height="30"
+          // placeholder="blur"
+          className="rounded-xl w-8 h-8 object-cover cursor-pointer"
+          onClick={() => setVisible(true)}
+        />
+      </div>
       <Modal
         visible={visible}
         onClose={onClose}
@@ -38,4 +41,4 @@ const LoginedHead = ({ image }: { image: string }) => {
   );
 };
 
-export default LoginedHead;
+export default Profile;

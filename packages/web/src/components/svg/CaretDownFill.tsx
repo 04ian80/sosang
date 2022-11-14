@@ -1,7 +1,7 @@
 import React from 'react';
 import { SVGType } from '../../lib/types';
 
-const CaretDownFill = ({ size, color }: SVGType) => {
+const CaretDownFill = ({ size = 16, color = 'black' }: SVGType) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

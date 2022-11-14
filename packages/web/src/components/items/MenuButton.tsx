@@ -18,7 +18,14 @@ const MenuButton = ({ className }: { className: string }) => {
 
   return (
     <div className={`relative z-1000 ${className}`}>
-      <button type="button" ref={buttonRef} onClick={() => setVisible((prev) => !prev)}>
+      <button
+        type="button"
+        ref={buttonRef}
+        onClick={() => {
+          setVisible((prev) => !prev);
+          console.log(buttonRef.current);
+        }}
+      >
         <Menu size={24} />
       </button>
       <Modal

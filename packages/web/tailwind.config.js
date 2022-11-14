@@ -45,7 +45,12 @@ module.exports = {
         black: '#000',
         'gray-200': 'rgb(229 231 235)',
         'zinc-300': 'rgb(212 212 216)',
-        brandGreen: '#064e3b',
+        'brandGreen-900': '#064e3b',
+        'brandGreen-800': '#065f46',
+        'brandGreen-700': '#047857',
+        'brandGreen-600': '#059669',
+        'brandGreen-500': '#10b981',
+        'brandGreen-400': '#34d399',
       },
       screens: {
         'min-sm': { min: '615px' },

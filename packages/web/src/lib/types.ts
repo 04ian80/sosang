@@ -1,4 +1,4 @@
 export interface SVGType {
-  size: number;
+  size?: number;
   color?: string;
 }
