@@ -6,7 +6,7 @@ import Image from 'next/image';
 const Profile = ({ image }: { image: string }) => {
   const myMenu: { name: string; link: string }[] = [
     { name: '가게 제안하기', link: '/place/add' },
-    { name: '마이페이지', link: '/my' },
+    { name: '마이페이지', link: '/mypage' },
     { name: '내 리스트', link: '/mylist' },
     { name: '내 일기', link: '/mydiary' },
   ];

@@ -10,15 +10,22 @@ interface ButtonProps {
   buttonColor: string;
 }
 
-const Button = ({ id, children, type = 'button', mode, handleClick, buttonColor }: ButtonProps) => {
+const Button = ({
+  id,
+  children,
+  type = 'button',
+  mode,
+  handleClick,
+  buttonColor,
+  className,
+}: ButtonProps) => {
   if (mode === 'form') {
     return (
       <button
         id={id}
         type={type}
         onClick={(e: React.MouseEvent<HTMLButtonElement>) => handleClick(e)}
-        // className={className}
-        className={`w-full mt-1 p-2 border border-${buttonColor} rounded-lg text-sm text-${buttonColor}`}
+        className={`${className} w-full mt-1 p-2 border border-${buttonColor} rounded-lg text-sm text-${buttonColor}`}
       >
         {children}
       </button>
@@ -29,7 +36,6 @@ const Button = ({ id, children, type = 'button', mode, handleClick, buttonColor 
       id={id}
       type={type}
       onClick={(e: React.MouseEvent<HTMLButtonElement>) => handleClick(e)}
-      // className={className}
       className="w-20 m-1 py-2 px-3 border border-brandGreen-800 rounded text-sm text-brandGreen-800"
     >
       {children}

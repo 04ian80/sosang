@@ -10,12 +10,17 @@ const Add = () => {
   const [url, setUrl] = useState('');
   const [tel, setTel] = useState('');
   const [errors, setErrors] = useState<any>({ telErrorMessage: '', urlErrorMessage: '' });
+  const [isImagesOverTen, setIsImagesOverTen] = useState(false);
 
   useValidateTel(tel, setErrors, errors);
   useValidateUrl(url, setErrors, errors);
 
   const handleSubmit = (e: SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (isImagesOverTen) {
+      alert('사진이 10장 이상입니다.');
+      return;
+    }
     alert('submit');
   };
 
@@ -44,7 +49,12 @@ const Add = () => {
               placeholder="매장 위치를 찾아주세요."
             />
             <TextInput name="location" placeholder="상세 정보를 입력해주세요.(예: 소상동 1층)" />
-            <FileUploader label="사진첨부" type="file" accept="image/*" />
+            <FileUploader
+              setIsImagesOverTen={setIsImagesOverTen}
+              label="사진첨부"
+              type="file"
+              accept="image/*"
+            />
             {/* <TextInput name="category" label="업종" placeholder="업종을 선택해주세요." /> */}
             <Select />
             <TextInput

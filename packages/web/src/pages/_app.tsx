@@ -5,6 +5,12 @@ import { SessionProvider } from 'next-auth/react';
 import type { Session } from 'next-auth';
 import HeadBar from '../components/base/HeadBar';
 
+declare global {
+  interface Window {
+    naver: any;
+  }
+}
+
 function MyApp({
   Component,
   pageProps: { session, ...pageProps },
