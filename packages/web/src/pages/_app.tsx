@@ -1,15 +1,9 @@
 import '../styles/globals.css';
 import '../tailwind.css';
-import type { AppProps } from 'next/app';
 import { SessionProvider } from 'next-auth/react';
+import { HeadBar } from '../components/base/HeadBar';
 import type { Session } from 'next-auth';
-import HeadBar from '../components/base/HeadBar';
-
-declare global {
-  interface Window {
-    naver: any;
-  }
-}
+import type { AppProps } from 'next/app';
 
 function MyApp({
   Component,

@@ -3,7 +3,6 @@ import { type RefObject, useEffect } from 'react';
 export const useClickOutside = <T extends HTMLElement = HTMLElement>(
   ref: RefObject<T>,
   handler: (e: Event) => void,
-  deps?: any[],
 ) => {
   useEffect(() => {
     const listener = (e: Event) => {
@@ -20,5 +19,5 @@ export const useClickOutside = <T extends HTMLElement = HTMLElement>(
     return () => {
       document.removeEventListener('mousedown', listener);
     };
-  }, [ref, handler, ...(deps ?? [])]);
+  }, [ref, handler]);
 };

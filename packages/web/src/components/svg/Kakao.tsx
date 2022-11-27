@@ -1,12 +1,13 @@
 import React, { SVGProps } from 'react';
+import { SVGType } from '../../lib/types';
 
-const SvgKakao = (props: SVGProps<SVGSVGElement>) => {
+const SvgKakao = ({ size = 16, color = 'currentColor' }: SVGType) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="16"
-      height="16"
-      fill="currentColor"
+      width={size}
+      height={size}
+      fill={color}
       className="bi bi-chat-fill"
       viewBox="0 0 16 16"
     >

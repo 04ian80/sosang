@@ -5,7 +5,7 @@ import { onCloseModal } from '../../lib/onCloseModal';
 
 const MenuButton = ({ className }: { className: string }) => {
   const buttonRef = useRef<HTMLButtonElement>(null);
-  const [visible, setVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
   const myMenu: { name: string; link: string }[] = [
     { name: '설정', link: '/setting' },
@@ -13,7 +13,7 @@ const MenuButton = ({ className }: { className: string }) => {
   ];
 
   const onClose = (e: Event) => {
-    onCloseModal(buttonRef, setVisible, e);
+    onCloseModal(buttonRef, setIsVisible, e);
   };
 
   return (
@@ -22,14 +22,14 @@ const MenuButton = ({ className }: { className: string }) => {
         type="button"
         ref={buttonRef}
         onClick={() => {
-          setVisible((prev) => !prev);
+          setIsVisible(true);
           console.log(buttonRef.current);
         }}
       >
         <Menu size={24} />
       </button>
       <Modal
-        visible={visible}
+        isVisible={isVisible}
         onClose={onClose}
         title={'메뉴'}
         className={'-right-2 top-10'}

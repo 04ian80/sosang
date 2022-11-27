@@ -29,41 +29,43 @@ const MapSearch = () => {
   };
 
   // 주소 검색 시 좌표가져오기 및 지도 이동
-  const handleSubmit = (e: SyntheticEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const inputValue = (e.target as HTMLElement).querySelector('input')?.value as string;
-    searchAddressToCoordinate(myLocation, inputValue, nmap);
+    searchAddressToCoordinate(inputValue, nmap);
   };
 
   const handleClick = (e: React.MouseEvent<HTMLElement>) => {
     const inputValue = ((e.target as HTMLElement).parentNode as HTMLElement).querySelector('input')
       ?.value as string;
-    searchAddressToCoordinate(myLocation, inputValue, nmap);
+    searchAddressToCoordinate(inputValue, nmap);
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.code === 'Enter' && (e.target as HTMLInputElement).value === '') {
+      e.preventDefault();
+    }
   };
 
   useEffect(() => {
     initMap();
-  }, [mapRef, myLocation]);
+  });
 
   return (
     <div className="relative flex flex-col justify-center items-center w-full">
       <Seo title="지도로 찾기 | 머스트잇" content="지도로 장소를 찾아보는 페이지" />
       <form
-        onSubmit={(e) => handleSubmit(e)}
+        onSubmit={handleSubmit}
         className="mx-2 my-1 border w-full [&>*]:p-2 rounded overflow-hidden"
       >
         <input
           className="w-4/5 border-r focus:outline-none"
           type="text"
           placeholder="(예:제주시)"
-          onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => {
-            if (e.code === 'Enter' && (e.target as HTMLInputElement).value === '') {
-              e.preventDefault();
-            }
-          }}
+          onKeyDown={handleKeyDown}
         />
         <button
-          onClick={(e) => handleClick(e)}
+          onClick={handleClick}
           className="w-1/5 p-0 bg-brandGreen-900 opacity-70 text-white"
           type="button"
         >

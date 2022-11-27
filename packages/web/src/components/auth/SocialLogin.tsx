@@ -24,7 +24,7 @@ const SocialLogin = ({ loginUrl, name, color, icon, iconstyle, textColor, id = '
   const iconEl = React.createElement(IconMap[icon]);
 
   return (
-    <Link href={loginUrl} id={id} passHref>
+    <Link href={loginUrl} id={id} passHref legacyBehavior>
       <a
         rel="noopener noreferrer"
         className={`flex items-center justify-center w-48 my-2 h-9 pr-3 rounded-md text-2xl text-white font-bold hover:opacity-80 ${color}`}

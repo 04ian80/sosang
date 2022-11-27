@@ -1,13 +1,13 @@
 import React from 'react';
 import { SVGType } from '../../lib/types';
 
-const SvgXmark = ({ size }: SVGType) => {
+const SvgXmark = ({ size = 24, color = 'currentColor' }: SVGType) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width={size}
       height={size}
-      fill="currentColor"
+      fill={color}
       className="bi bi-x"
       viewBox="0 0 16 16"
     >

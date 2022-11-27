@@ -22,7 +22,7 @@ const FileUploader = ({ type = 'text', label, accept, required, setIsImagesOverT
     } else if (images.length <= 10) {
       setIsImagesOverTen(false);
     }
-  }, [images]);
+  }, [images, setIsImagesOverTen]); // es-lint 원래 images만 있었는데 빠른 수정으로 setIsImagesOverTen도 추가 됨.
 
   const handleClick = () => {
     if (images.length > 10) {

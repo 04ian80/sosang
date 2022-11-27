@@ -3,19 +3,20 @@ import { useSession } from 'next-auth/react';
 import { setLoginModalStore } from '../../stores/setLoginModal';
 import SearchInput from '../search/SearchInput';
 import MenuButton from '../items/MenuButton';
-import { MobileSearch, ShowMobileSearch } from '../items/ShowMobileSearch';
+import { ShowMobileSearch } from '../items/ShowMobileSearch';
+import { MobileSearch } from '../search/MobileSearch';
 import Profile from '../items/Profile';
 import Link from 'next/link';
 
-const HeadBar = () => {
+export const HeadBar = () => {
   const { data } = useSession();
-  const openModal = setLoginModalStore((state) => state.open);
+  const openLoginModal = setLoginModalStore((state) => state.openLoginModal);
   const [isSearchBarMobile, setSearchSearchBar] = useState(false);
 
   return (
     <div className="relative z-9999">
       <div className="flex items-center justify-between px-6 py-3 shadow-sm">
-        <Link href="/">
+        <Link href="/" legacyBehavior>
           <a className="font-bold text-xl text-brandGreen-900">머스트잇</a>
         </Link>
 
@@ -27,7 +28,7 @@ const HeadBar = () => {
             <Profile image={data.user.image} />
           ) : (
             <button
-              onClick={openModal}
+              onClick={openLoginModal}
               className="py-1 px-2 border border-blue-600 rounded-3xl text-blue-600"
             >
               로그인
@@ -36,9 +37,7 @@ const HeadBar = () => {
           <MenuButton className={'translate-y-1'} />
         </div>
       </div>
-      <MobileSearch search={isSearchBarMobile} />
+      <MobileSearch isSearchBarMobile={isSearchBarMobile} />
     </div>
   );
 };
-
-export default HeadBar;

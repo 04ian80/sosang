@@ -9,8 +9,8 @@ import { useSession, signOut } from 'next-auth/react';
 const Home: NextPage = () => {
   const { data, status } = useSession();
 
-  const login = setLoginModalStore((state) => state.visible);
-  const open = setLoginModalStore((state) => state.open);
+  const isVisible = setLoginModalStore((state) => state.isVisible);
+  const openLoginModal = setLoginModalStore((state) => state.openLoginModal);
 
   return (
     <>
@@ -21,9 +21,9 @@ const Home: NextPage = () => {
       {data?.user ? (
         <button onClick={() => signOut()}>로그아웃</button>
       ) : (
-        <button onClick={open}>로그인</button>
+        <button onClick={openLoginModal}>로그인</button>
       )}
-      {login && <Login />}
+      {isVisible && <Login />}
     </>
   );
 };

@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import React from 'react';
 import SvgKakao from '../svg/Kakao';
 import SvgGoogle from '../svg/Google';
