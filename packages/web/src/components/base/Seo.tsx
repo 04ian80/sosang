@@ -11,7 +11,7 @@ const Seo = ({ title, content }: Meta) => {
     <Head>
       <title>{title}</title>
       <meta name="description" content={content} />
-      <link rel="icon" href="/sosang.png" />
+      <link rel="icon" href="/musteat.png" />
     </Head>
   );
 };

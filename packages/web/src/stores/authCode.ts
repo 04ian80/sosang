@@ -8,6 +8,6 @@ interface AuthCode {
 export const setCode = create<AuthCode>((set) => ({
   code: '',
   setCode: (code) => {
-    set((state) => ({ code: code }));
+    set(() => ({ code: code }));
   },
 }));

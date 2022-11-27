@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+
+.base-button {
+  @apply absolute left-0 right-0 bottom-0 min-sm:mx-4 text-2xl rounded;
+}
+
+.base-input {
+  @apply w-full mt-1 p-2 transition duration-200 border border-gray-200 rounded-lg text-sm focus:bg-white hover:bg-white;
+}
+
+.scrolling-touch {
+  -webkit-overflow-scrolling: touch;
+}
+
+.ms-overflow-none {
+  -ms-overflow-style: none;
+}
+
+.scrollbar-hide {
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scroll-x {
+  @apply overflow-x-scroll overflow-y-hidden whitespace-nowrap scrolling-touch ms-overflow-none scrollbar-hide;
+}
+
+@tailwind utilities;
+@tailwind variants;
