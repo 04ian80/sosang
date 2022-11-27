@@ -1,23 +1,23 @@
 import create from 'zustand';
 
 interface LoginModalStore {
-  visible: boolean;
-  open(): void;
-  close(): void;
+  isVisible: boolean;
+  openLoginModal(): void;
+  closeLoginModal(): void;
 }
 
 export const setLoginModalStore = create<LoginModalStore>((set) => ({
-  visible: false,
-  open() {
+  isVisible: false,
+  openLoginModal() {
     set((prev) => ({
       ...prev,
-      visible: true,
+      isVisible: true,
     }));
   },
-  close() {
+  closeLoginModal() {
     set((prev) => ({
       ...prev,
-      visible: false,
+      isVisible: false,
     }));
   },
 }));

@@ -1,7 +1,7 @@
 import React from 'react';
 import { SVGType } from '../../lib/types';
 
-const Notification = ({ size, color = 'currentColor' }: SVGType) => {
+const Notification = ({ size = 24, color = 'currentColor' }: SVGType) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

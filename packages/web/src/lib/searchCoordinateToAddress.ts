@@ -1,6 +1,6 @@
 export const searchCoordinateToAddress = (latlng: naver.maps.LatLng, nmap: naver.maps.Map) => {
   const infoWindow = new naver.maps.InfoWindow({ content: '', borderWidth: 0 });
-  infoWindow.close();
+  // infoWindow.close();
   naver.maps.Service.reverseGeocode(
     {
       coords: latlng,

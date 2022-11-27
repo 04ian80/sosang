@@ -1,6 +1,7 @@
 import React from 'react';
+import { SVGType } from '../../lib/types';
 
-const SvgNaver = () => {
+const SvgNaver = ({ size = 24, color = '#03C75A' }: SVGType) => {
   return (
     <svg
       version="1.1"
@@ -9,14 +10,14 @@ const SvgNaver = () => {
       xmlnsXlink="http://www.w3.org/1999/xlink"
       x="0px"
       y="0px"
-      width={24}
-      height={24}
+      width={size}
+      height={size}
       viewBox="0 0 200 200"
       enableBackground="new 0 0 200 200"
       xmlSpace="preserve"
     >
       <path
-        fill="#03C75A"
+        fill={color}
         opacity="1.000000"
         stroke="none"
         d="

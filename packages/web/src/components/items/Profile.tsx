@@ -11,10 +11,10 @@ const Profile = ({ image }: { image: string }) => {
     { name: '내 일기', link: '/mydiary' },
   ];
   const buttonRef = useRef<HTMLImageElement>(null);
-  const [visible, setVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
   const onClose = (e: Event) => {
-    onCloseModal(buttonRef, setVisible, e);
+    onCloseModal(buttonRef, setIsVisible, e);
   };
 
   return (
@@ -27,11 +27,11 @@ const Profile = ({ image }: { image: string }) => {
           height="30"
           // placeholder="blur"
           className="rounded-xl w-8 h-8 object-cover cursor-pointer"
-          onClick={() => setVisible(true)}
+          onClick={() => setIsVisible(true)}
         />
       </div>
       <Modal
-        visible={visible}
+        isVisible={isVisible}
         onClose={onClose}
         title={'내 계정'}
         className={'-right-1 top-11'}

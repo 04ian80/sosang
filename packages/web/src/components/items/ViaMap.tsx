@@ -5,7 +5,7 @@ import Map from '../svg/Map';
 const ViaMap = () => {
   const [hover, setHover] = useState(false);
   return (
-    <Link href="/map">
+    <Link href="/map" legacyBehavior>
       <a
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}

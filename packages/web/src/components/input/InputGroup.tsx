@@ -11,9 +11,6 @@ interface InputGroupProps {
 
 const InputGroup = ({ className, name, label, required, error, children }: InputGroupProps) => {
   // Enter시 자동 submit 막기
-  const handleKeyDown = (e: any) => {
-    if (e.code === 'Enter') e.preventDefault();
-  };
 
   return (
     <div className={`w-full ${className}`}>

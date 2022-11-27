@@ -1,7 +1,7 @@
 import React from 'react';
 import { SVGType } from '../../lib/types';
 
-const Search = ({ size, color }: SVGType) => {
+const Search = ({ size = 24, color = 'currentColor' }: SVGType) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

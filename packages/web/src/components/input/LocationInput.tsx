@@ -1,7 +1,7 @@
 import React from 'react';
 import InputGroup from './InputGroup';
 
-interface TextInputProps {
+interface LocationInputProps {
   className?: string;
   type?: string;
   name: string;
@@ -15,7 +15,7 @@ interface TextInputProps {
   error?: string | undefined;
 }
 
-const TextInput = ({
+const LocationInput = ({
   className,
   type = 'text',
   name,
@@ -27,7 +27,7 @@ const TextInput = ({
   setIsRequiredFilled,
   required,
   error,
-}: TextInputProps) => {
+}: LocationInputProps) => {
   // Enter시 자동 submit 막기
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.code === 'Enter') e.preventDefault();
@@ -41,9 +41,9 @@ const TextInput = ({
     }
   };
 
-  if (required) {
-    return (
-      <InputGroup className={className} name={name} label={label} required={required} error={error}>
+  return (
+    <InputGroup className={className} name={name} label={label} required={required} error={error}>
+      <div className="mb-4">
         <input
           id={name}
           className="base-input"
@@ -55,25 +55,19 @@ const TextInput = ({
           onChange={handleChange}
           autoComplete="off"
         />
-      </InputGroup>
-    );
-  }
-
-  return (
-    <InputGroup className={className} name={name} label={label} required={required} error={error}>
-      <input
-        id={name}
-        className="base-input"
-        type={type}
-        placeholder={placeholder}
-        pattern={pattern}
-        value={value}
-        onKeyDown={(e) => handleKeyDown(e)}
-        onChange={setValue ? (e) => setValue(e.target.value) : undefined}
-        autoComplete="off"
-      />
+        <input
+          id={name}
+          className="base-input"
+          type={type}
+          placeholder="상세 정보를 입력해주세요.(예: 소상동 1층)"
+          value={value}
+          onKeyDown={handleKeyDown}
+          onChange={handleChange}
+          autoComplete="off"
+        />
+      </div>
     </InputGroup>
   );
 };
 
-export default TextInput;
+export default LocationInput;

@@ -15,12 +15,13 @@ const UploadedImg = ({ images, setImages }: Props) => {
           <div key={i} className="relative inline-block m-2">
             <Image
               src={url}
-              width="140"
-              height="140"
+              width="144"
+              height="144"
               quality={50}
               placeholder={'blur'}
               blurDataURL="/placeholder.png"
-              className="w-10 h-10"
+              className="w-36 h-36"
+              alt="Uploaded Image"
             />
             <div
               onClick={() => setImages(images.filter((e) => e !== url))}
