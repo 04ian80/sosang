@@ -1,38 +1,39 @@
 /** @type {import('tailwindcss').Config} */
 const plugin = require('tailwindcss/plugin');
 module.exports = {
-  content: ['./src/**/**/*.tsx'],
+  content: ['./src/**/**/*.tsx', './src/**/*.tsx'],
   theme: {
-    fontFamily: {
-      roboto: [
-        'Roboto',
-        'Noto Sans KR',
-        '-apple-system',
-        'BlinkMacSystemFont',
-        'Segoe UI',
-        'Oxygen',
-        'Ubuntu',
-        'Cantarell',
-        'Fira Sans',
-        'Droid Sans',
-        'Helvetica Neue',
-        'sans-serif',
-      ],
-      gmarket: [
-        'GmarketSans',
-        'Noto Sans KR',
-        '-apple-system',
-        'BlinkMacSystemFont',
-        'Segoe UI',
-        'Roboto',
-        'Oxygen',
-        'Ubuntu',
-        'Cantarell',
-        'Fira Sans',
-        'Droid Sans',
-        'Helvetica Neue',
-        'sans-serif',
-      ],
+    extend: {
+      fontFamily: {
+        roboto: [
+          'Roboto',
+          'Noto Sans KR',
+          '-apple-system',
+          'BlinkMacSystemFont',
+          'Segoe UI',
+          'Oxygen',
+          'Ubuntu',
+          'Cantarell',
+          'Fira Sans',
+          'Droid Sans',
+          'Helvetica Neue',
+          'sans-serif',
+        ],
+        gmarket: [
+          'GmarketSans',
+          'Noto Sans KR',
+          '-apple-system',
+          'BlinkMacSystemFont',
+          'Segoe UI',
+          'Oxygen',
+          'Ubuntu',
+          'Cantarell',
+          'Fira Sans',
+          'Droid Sans',
+          'Helvetica Neue',
+          'sans-serif',
+        ],
+      },
     },
     extend: {
       colors: {

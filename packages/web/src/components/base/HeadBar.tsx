@@ -17,7 +17,7 @@ export const HeadBar = () => {
     <div className="relative z-9999">
       <div className="flex items-center justify-between px-6 py-3 shadow-sm">
         <Link href="/" legacyBehavior>
-          <a className="font-bold text-xl text-brandGreen-900">머스트잇</a>
+          <a className="text-xl text-brandGreen-900 font-extrabold">머스트잇</a>
         </Link>
 
         <SearchInput className="max-sm:hidden" />
