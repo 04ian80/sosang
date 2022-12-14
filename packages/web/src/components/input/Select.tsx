@@ -4,7 +4,6 @@ import InputGroup from './InputGroup';
 
 const Select = () => {
   const cate = ['--업종을 선택해주세요.--', '한식', '양식', '일식', '중식', '아시안', '분식'];
-  // const selectRef = useRef<HTMLSelectElement>(null);
 
   return (
     <InputGroup name="category" label="업종">
@@ -12,6 +11,9 @@ const Select = () => {
         <select
           name="category"
           className="relative base-input appearance-none hover:bg-transparent focus:bg-transparent outline-none bg-transparent z-20"
+          onChange={(e) => {
+            console.log(e.target.value);
+          }}
         >
           {cate.map((category) => (
             <option key={category} value={category}>
