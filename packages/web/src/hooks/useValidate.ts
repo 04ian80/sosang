@@ -8,7 +8,7 @@ export const useValidateTel = (tel: string, setErrors: React.Dispatch<any>, erro
     } else if (!tel || telRegex.test(tel)) {
       setErrors({ ...errors, telErrorMessage: '' });
     }
-  }, [errors, setErrors, tel]);
+  }, [tel]);
 };
 
 const urlRegex =
@@ -20,5 +20,5 @@ export const useValidateUrl = (url: string, setErrors: React.Dispatch<any>, erro
     } else {
       setErrors({ ...errors, urlErrorMessage: '' });
     }
-  }, [errors, setErrors, url]);
+  }, [url]);
 };

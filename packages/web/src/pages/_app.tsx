@@ -23,6 +23,13 @@ const gmarket = localFont({
   ],
 });
 
+declare global {
+  interface Window {
+    kakao: any;
+  }
+  const kakao: any;
+}
+
 function MyApp({
   Component,
   pageProps: { session, ...pageProps },

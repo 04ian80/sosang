@@ -10,7 +10,6 @@ interface TextInputProps {
   label?: string;
   value?: string;
   setValue?: (str: string) => void;
-  setIsRequiredFilled?: (bool: boolean) => void;
   required?: boolean;
   error?: string | undefined;
 }
@@ -24,7 +23,6 @@ const TextInput = ({
   label,
   value,
   setValue,
-  setIsRequiredFilled,
   required,
   error,
 }: TextInputProps) => {
@@ -33,28 +31,22 @@ const TextInput = ({
     if (e.code === 'Enter') e.preventDefault();
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (setIsRequiredFilled && (e.target as HTMLInputElement).value === '') {
-      setIsRequiredFilled(false);
-    } else if (setIsRequiredFilled && (e.target as HTMLInputElement).value !== '') {
-      setIsRequiredFilled(true);
-    }
-  };
-
   if (required) {
     return (
       <InputGroup className={className} name={name} label={label} required={required} error={error}>
-        <input
-          id={name}
-          className="base-input"
-          type={type}
-          placeholder={placeholder}
-          pattern={pattern}
-          value={value}
-          onKeyDown={handleKeyDown}
-          onChange={handleChange}
-          autoComplete="off"
-        />
+        <>
+          <input
+            id={name}
+            className="base-input"
+            type={type}
+            placeholder={placeholder}
+            pattern={pattern}
+            value={value}
+            onKeyDown={handleKeyDown}
+            autoComplete="off"
+          />
+          <small className="pt-1 pl-2 font-medium text-red-400">{error}</small>
+        </>
       </InputGroup>
     );
   }

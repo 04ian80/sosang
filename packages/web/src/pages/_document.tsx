@@ -6,9 +6,9 @@ export default function Document() {
     <Html lang="ko">
       <Head>
         <Script
-          strategy="beforeInteractive"
           type="text/javascript"
-          src={`https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=${process.env.NEXT_PUBLIC_MAP_KEY}&submodules=geocoder&callback=initMap`}
+          strategy="beforeInteractive"
+          src={`//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.KAKAO_API_KEY}&libraries=services&autoload=false`}
         ></Script>
       </Head>
       <body>

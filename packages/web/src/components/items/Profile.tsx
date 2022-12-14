@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 const Profile = ({ image }: { image: string }) => {
   const myMenu: { name: string; link: string }[] = [
-    { name: '가게 제안하기', link: '/place/add' },
+    { name: '가게 제안하기', link: '/place/new' },
     { name: '마이페이지', link: '/mypage' },
     { name: '내 리스트', link: '/mylist' },
     { name: '내 일기', link: '/mydiary' },
@@ -25,7 +25,8 @@ const Profile = ({ image }: { image: string }) => {
           alt="프로필 이미지"
           width="30"
           height="30"
-          // placeholder="blur"
+          placeholder="blur"
+          blurDataURL="/placeholder.png"
           className="rounded-xl w-8 h-8 object-cover cursor-pointer"
           onClick={() => setIsVisible(true)}
         />
