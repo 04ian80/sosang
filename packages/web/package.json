@@ -12,6 +12,7 @@
     "@next/font": "^13.0.5",
     "@types/navermaps": "^3.6.1",
     "axios": "^1.1.2",
+    "framer-motion": "^7.10.0",
     "next": "^13.0.5",
     "next-auth": "^4.14.0",
     "react": "^18.2.0",

@@ -14,7 +14,7 @@ export const HeadBar = () => {
   const [isSearchBarMobile, setIsSearchBarMobile] = useState(false);
 
   return (
-    <div className="relative z-9998">
+    <div className="fixed w-full bg-white z-[9998]">
       <div className="flex items-center justify-between px-6 py-3 shadow-sm">
         <Link href="/" legacyBehavior>
           <a className="text-xl text-brandGreen-900 font-extrabold">머스트잇</a>

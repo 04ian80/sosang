@@ -36,6 +36,19 @@ module.exports = {
       },
     },
     extend: {
+      keyframes: {
+        scroll: {
+          '0%': {
+            transform: 'translateX(0)',
+          },
+          '100%': {
+            transform: 'translateX(calc(-200px * 11))',
+          },
+        },
+      },
+      animation: {
+        'auto-carousel': 'scroll 80s linear infinite',
+      },
       colors: {
         googleBlue: '#4285F4',
         kakaoYellow: '#FEE500',
@@ -52,6 +65,12 @@ module.exports = {
         'brandGreen-600': '#059669',
         'brandGreen-500': '#10b981',
         'brandGreen-400': '#34d399',
+        'brandYellow-50': '#fefce8',
+        'brandYellow-100': '#fef9c3',
+        'brandYellow-200': '#fef08a',
+        'brandYellow-300': '#fde047',
+        'brandYellow-400': '#facc15',
+        'brandYellow-500': '#eab308',
       },
       width: {
         100: '25rem',
@@ -66,12 +85,15 @@ module.exports = {
         140: '40rem',
       },
       screens: {
+        'min-xs': { min: '400px' },
         'min-sm': { min: '635px' },
         'min-md': { min: '768px' },
         'min-lg': { min: '976px' },
         'min-xl': { min: '1440px' },
-        'max-sm': { max: '635px' },
         'max-xs': { max: '400px' },
+        'max-sm': { max: '635px' },
+        'max-lg': { max: '976px' },
+        'max-md': { max: '768px' },
       },
       zIndex: {
         1000: '1000',
