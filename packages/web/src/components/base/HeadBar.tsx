@@ -11,10 +11,10 @@ import Link from 'next/link';
 export const HeadBar = () => {
   const { data } = useSession();
   const openLoginModal = setLoginModalStore((state) => state.openLoginModal);
-  const [isSearchBarMobile, setSearchSearchBar] = useState(false);
+  const [isSearchBarMobile, setIsSearchBarMobile] = useState(false);
 
   return (
-    <div className="relative z-9999">
+    <div className="relative z-9998">
       <div className="flex items-center justify-between px-6 py-3 shadow-sm">
         <Link href="/" legacyBehavior>
           <a className="text-xl text-brandGreen-900 font-extrabold">머스트잇</a>
@@ -23,7 +23,7 @@ export const HeadBar = () => {
         <SearchInput className="max-sm:hidden" />
 
         <div className="relative flex items-center justify-end [&>*]:ml-3">
-          <ShowMobileSearch onShow={() => setSearchSearchBar((prev) => !prev)} />
+          <ShowMobileSearch onShow={() => setIsSearchBarMobile((prev) => !prev)} />
           {data?.user?.image ? (
             <Profile image={data.user.image} />
           ) : (

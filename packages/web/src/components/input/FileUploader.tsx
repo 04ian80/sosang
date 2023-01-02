@@ -1,6 +1,5 @@
 import React, { Dispatch, SetStateAction, useEffect, useRef, useState } from 'react';
 import AddFileButton from '../items/AddFileButton';
-import Button from '../system/Button';
 import InputGroup from './InputGroup';
 import UploadedImg from './UploadedImg';
 
@@ -8,32 +7,21 @@ interface Props {
   type?: string;
   label?: string;
   accept?: string;
-  required?: boolean;
-  setIsImagesOverTen: Dispatch<SetStateAction<boolean>>;
+  images: string[];
+  setImages: Dispatch<SetStateAction<string[]>>;
 }
 
-const FileUploader = ({ type = 'text', label, accept, required, setIsImagesOverTen }: Props) => {
-  const [images, setImages] = useState<string[]>([]);
+const FileUploader = ({ type = 'text', label, accept, images, setImages }: Props) => {
   const fileInput = useRef<HTMLInputElement>(null);
 
-  useEffect(() => {
-    if (images.length > 10) {
-      setIsImagesOverTen(true);
-    } else if (images.length <= 10) {
-      setIsImagesOverTen(false);
-    }
-  }, [images, setIsImagesOverTen]); // es-lint 원래 images만 있었는데 빠른 수정으로 setIsImagesOverTen도 추가 됨.
-
   const handleClick = () => {
-    if (images.length > 10) {
+    if (images.length >= 10) {
       alert('사진은 10장까지 추가할 수 있습니다.');
       return;
     }
     fileInput?.current?.click();
   };
 
-  // input type='file' 에서 막 올렸던 파일과 같은 파일을 올리지 못함. 하지만 다른 파일을 올리고 그 다음 올릴때는 또 올려짐
-  // 어차피 같은 파일은 못올리게 할 것이지만 만약 디폴트로 이렇게 못올릴땐 '같은 사진을 못올립니다' 문구도 못 띄우기 때문에 일단 올릴 수 있게 하고 문구 띄울 예정.
   const handleInputClick = (e: React.MouseEvent<HTMLInputElement, MouseEvent>) => {
     (e.target as HTMLInputElement).value = '';
   };
@@ -48,7 +36,7 @@ const FileUploader = ({ type = 'text', label, accept, required, setIsImagesOverT
   };
 
   return (
-    <InputGroup className="flex flex-col w-full sm:w-full" label={label} required={required}>
+    <InputGroup className="flex flex-col w-full sm:w-full" label={label}>
       <>
         {images.length !== 0 ? (
           <div>

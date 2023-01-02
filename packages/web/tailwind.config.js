@@ -53,12 +53,25 @@ module.exports = {
         'brandGreen-500': '#10b981',
         'brandGreen-400': '#34d399',
       },
+      width: {
+        100: '25rem',
+        104: '26rem',
+        128: '32rem',
+        140: '40rem',
+      },
+      height: {
+        100: '25rem',
+        104: '26rem',
+        128: '32rem',
+        140: '40rem',
+      },
       screens: {
-        'min-sm': { min: '615px' },
+        'min-sm': { min: '635px' },
         'min-md': { min: '768px' },
         'min-lg': { min: '976px' },
         'min-xl': { min: '1440px' },
-        'max-sm': { max: '615px' },
+        'max-sm': { max: '635px' },
+        'max-xs': { max: '400px' },
       },
       zIndex: {
         1000: '1000',
