@@ -8,10 +8,10 @@ interface Props {
 
 const linkVariants: Variants = {
   offscreen: {
-    y: 100,
+    y: -100,
   },
   onscreen: {
-    y: 0,
+    y: -10,
     transition: {
       type: 'spring',
       bounce: 0.2,

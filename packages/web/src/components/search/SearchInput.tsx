@@ -11,7 +11,7 @@ interface searchProps {
 const SearchInput = ({ className, inputStyle }: searchProps) => {
   return (
     <div className={`flex items-center ${className}`}>
-      <div className="flex justify-end relative bg-white [&>*]:py-1 [&>*]:px-4 font-normal text-gray-800 border border-gray-100 [&>:not(last-child)]:border-r shrink-0">
+      <div className="flex justify-end relative bg-white [&>*]:py-1 [&>*]:px-4 font-semibold text-gray-800 border border-gray-100 [&>:not(last-child)]:border-r shrink-0">
         <LocationOption />
         <input
           className={`placeholder-gray-300 placeholder:font-light placeholder:text-sm focus:outline-none pl-20 ${inputStyle}`}
