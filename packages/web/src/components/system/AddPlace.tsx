@@ -30,8 +30,8 @@ export const AddPlace = ({ coordsToAddress }: Props) => {
     <>
       <Seo title="가게 제안하기 | 머스트잇" content="가게를 제안하기 위한 양식을 제출해주세요." />
       <div className="bg-white">
-        <div className="flex flex-col items-center p-6">
-          <h2 className="text-2xl mb-2">가게 제안하기</h2>
+        <div className="flex flex-col items-center">
+          <h2 className="text-2xl mt-20 mb-2">가게 제안하기</h2>
           <form
             encType="multipart/form-data"
             action="/api/place"

@@ -1,0 +1,52 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "image": "https://user-images.githubusercontent.com/97023321/209774073-109ddcca-dcb3-4366-ba3a-671fc73bad19.jpeg",
+      "name": "오아 베이크숍",
+      "category": "카페, 베이커리",
+      "address": "제주 제주시 구남동4길 3 1층 101호 (이도이동)",
+      "hashtag": ["도넛", "스콘", "파이"]
+    },
+    {
+      "id": 2,
+      "image": "https://user-images.githubusercontent.com/97023321/209774716-e33fe8d5-e638-47ac-b8b2-7d85a6c6e26b.png",
+      "name": "용표 스테끼",
+      "category": "양식",
+      "address": "경기도 성남시",
+      "hashtag": ["알리오올리오", "스테이크"]
+    },
+    {
+      "id": 3,
+      "image": "https://user-images.githubusercontent.com/97023321/209774330-7610c93f-17d9-417b-a7fc-a0c023cd4cfb.jpeg",
+      "name": "데디드",
+      "category": "카페, 베이커리",
+      "address": "제주 제주시 승천로 79 지하 1층 (아라이동)",
+      "hashtag": ["레몬티", "스콘", "바나나푸딩"]
+    },
+    {
+      "id": 4,
+      "image": "https://user-images.githubusercontent.com/97023321/209774261-45af8db2-11ca-4200-9477-ac3e605d2dc2.jpeg",
+      "name": "잇마이피자",
+      "category": "피자",
+      "address": "제주 제주시 중앙로 253 2층 (이도이동)",
+      "hashtag": ["바질토마토피자", "햄버거피자"]
+    },
+    {
+      "id": 5,
+      "image": "https://user-images.githubusercontent.com/97023321/209774817-44ccf2f3-db92-4a0b-bd85-5c92b441108c.jpeg",
+      "name": "헬로베트남쌀국수",
+      "category": "아시안",
+      "address": "경기 광주시 새말길 61 1층 101호",
+      "hashtag": ["소고기쌀국수", "탄탄국밥"]
+    },
+    {
+      "id": 6,
+      "image": "https://user-images.githubusercontent.com/97023321/209774186-c713348d-d78e-466f-9bce-52fab3b1ad08.jpeg",
+      "name": "센트로",
+      "category": "양식",
+      "address": "제주 서귀포시 태평로 449 1층",
+      "hashtag": ["라자냐", "감자뇨끼"]
+    }
+  ]
+}

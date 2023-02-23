@@ -1,7 +1,7 @@
 import React from 'react';
 import { SVGType } from '../../lib/types';
 
-const Map = ({ size = 24, color = '#000' }: SVGType) => {
+const Map = ({ size = 24, color = '#064e3b' }: SVGType) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

@@ -16,7 +16,7 @@ const ViaMap = () => {
             지도로 보기
           </div>
         )}
-        <Map size={20} />
+        <Map size={20} color="black" />
       </a>
     </Link>
   );

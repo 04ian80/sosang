@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-const telRegex = /[0-9]{2,3}-[0-9]{3,4}-[0-9]{3,4}/;
+const telRegex = /[0-9]{2,3}[0-9]{3,4}[0-9]{3,4}/;
 export const useValidateTel = (tel: string, setErrors: React.Dispatch<any>, errors: any) => {
   useEffect(() => {
     if (tel && !telRegex.test(tel)) {

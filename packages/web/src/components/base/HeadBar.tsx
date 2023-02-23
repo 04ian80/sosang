@@ -13,8 +13,12 @@ export const HeadBar = () => {
   const openLoginModal = setLoginModalStore((state) => state.openLoginModal);
   const [isSearchBarMobile, setIsSearchBarMobile] = useState(false);
 
+  const setUnscroll = () => {
+    document.body.style.overflow = 'hidden';
+  };
+
   return (
-    <div className="relative z-9998">
+    <div className="fixed w-full bg-white z-[9998]">
       <div className="flex items-center justify-between px-6 py-3 shadow-sm">
         <Link href="/" legacyBehavior>
           <a className="text-xl text-brandGreen-900 font-extrabold">머스트잇</a>
@@ -28,7 +32,10 @@ export const HeadBar = () => {
             <Profile image={data.user.image} />
           ) : (
             <button
-              onClick={openLoginModal}
+              onClick={() => {
+                openLoginModal();
+                setUnscroll();
+              }}
               className="py-1 px-2 border border-blue-600 rounded-3xl text-blue-600"
             >
               로그인
