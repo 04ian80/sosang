@@ -27,5 +27,13 @@
   @apply overflow-x-scroll overflow-y-hidden whitespace-nowrap scrolling-touch ms-overflow-none scrollbar-hide;
 }
 
+/* .primary {
+  @apply;
+}
+
+.secondary {
+  @apply;
+} */
+
 @tailwind utilities;
 @tailwind variants;

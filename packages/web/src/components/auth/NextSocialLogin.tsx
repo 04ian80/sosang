@@ -29,7 +29,7 @@ const NextSocialLogin = ({ name, color, icon, iconstyle, textColor }: Props) => 
     >
       <div className="flex items-center justify-center w-full">
         <div className={`${iconstyle}`}>{iconEl}</div>
-        <span className={`text-sm font-medium ${textColor} font-roboto`}>{name}</span>
+        <span className={`text-sm font-medium ${textColor} font-roboto font-semibold`}>{name}</span>
       </div>
     </button>
   );

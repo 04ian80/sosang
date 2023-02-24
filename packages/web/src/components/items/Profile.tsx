@@ -25,8 +25,6 @@ const Profile = ({ image }: { image: string }) => {
           alt="프로필 이미지"
           width="30"
           height="30"
-          placeholder="blur"
-          blurDataURL="/placeholder.png"
           className="rounded-xl w-8 h-8 object-cover cursor-pointer"
           onClick={() => setIsVisible(true)}
         />

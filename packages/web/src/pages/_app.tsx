@@ -10,11 +10,11 @@ const gmarket = localFont({
   src: [
     {
       path: './fonts/GmarketSansLight.otf',
-      weight: '300',
+      weight: '400',
     },
     {
       path: './fonts/GmarketSansMedium.otf',
-      weight: '500',
+      weight: '600',
     },
     {
       path: './fonts/GmarketSansBold.otf',

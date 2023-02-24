@@ -17,7 +17,7 @@ const LocationOption = () => {
     <div className="flex-shrink-0 z-5555" onClick={() => setIsVisible(true)}>
       <button
         ref={buttonRef}
-        className="relative group translate-x-1 inline-flex items-center z-5555 px-2 text-sm font-medium text-center text-gray-700 hover:text-gray-400 focus:outline-none dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-white dark:border-gray-600"
+        className="relative group translate-x-1 inline-flex items-center z-5555 px-2 text-sm text-center text-gray-700 hover:text-gray-400 focus:outline-none dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-white dark:border-gray-600"
         type="button"
       >
         {location}
