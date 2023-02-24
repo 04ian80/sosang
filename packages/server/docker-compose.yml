@@ -7,9 +7,9 @@ services:
       - 5454:5432
     environment:
       TZ: Asia/Seoul
-      POSTGRES_USER: postgres
+      POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-      POSTGRES_DB: nest
+      POSTGRES_DB: express
     networks:
       - musteat
 networks:
